@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Post Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button; -moz-appearance: button; -ms-appearance: button; appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
+  </head>
+  <body>
+    <div class="page">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'post-page.css') }}" />
+
+      <div class="index-container">
+        <div class="index-index"></div>
+        <!-- <div class="post-page-post-page1"> -->
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="/search_by_post"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
+              </a>
+              <a href="/profilesettings" method="get">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                  alt="image28I546"
+                  class="index-image28"
+                />
+              </a>
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <div class="post-page-title-bar">
+            <a href="basicpage.html" class="post-page-navlink">
+              <img
+                alt="LogoI356"
+                src="public/playground_assets/logoi356-a3a.svg"
+                class="post-page-logo"
+              />
+            </a>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="post-page-user-input-search-bar"
+            />
+            <div class="post-page-options">
+              <a href="create-post.html" class="post-page-navlink1">
+                <img
+                  alt="image39I356"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/3f4c48ca-d033-4fe1-8955-ee3a4518109e?org_if_sml=1521"
+                  class="post-page-image39"
+                />
+              </a>
+              <img
+                alt="image28I356"
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/d96354ce-b1b9-4ee7-b144-c0fb435f7318?org_if_sml=11197"
+                class="post-page-image28"
+              />
+              <a href="profile.html" class="post-page-navlink2">
+                <img
+                  alt="image27I356"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/242ec6bf-06d9-4655-b207-2d99f6c70107?org_if_sml=11214"
+                  class="post-page-image27"
+                />
+              </a>
+              <img
+                alt="image31I356"
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/49660be1-4ae3-4705-a521-bb9dd071bb19?org_if_sml=1599"
+                class="post-page-image31"
+              />
+            </div>
+          </div> -->
+          <div class="post-page-post-sidebar">
+              <div class="basicpage-sidebar">
+              <!-- <div class="basicpage-top-section">
+                <span class="basicpage-text">
+                  <a href = "/Top_Board">
+                  <span>Top Board</span>
+              </a>
+              </span>
+              <span class="basicpage-text02">
+                  <a href = "/Following">
+                  <span>Following</span>
+              </a>
+              </span>
+              <span class="basicpage-text04">
+                  <a href = "/Top_Posts">
+                  <span>Top Posts</span>
+              </a>
+              </span>
+              <span class="basicpage-text06">
+                  <a href = "/Top_Karma">
+                  <span>Top Karma</span>
+              </a>
+              </span>
+              <span class="basicpage-text08">
+                  <a href = "/Top_Communities">
+                  <span>Top Communitites</span>
+              </a>
+              </span>
+              </div> -->
+              <div class="basicpage-catergory-section">
+                <a href="/category/Academics" class="basicpage-text10"><span>Academics</span></a>
+                <a href="/category/Campus Life" class="basicpage-text12"><span>Campus Life</span></a>
+                <a href="/category/Events" class="basicpage-text14"><span>Events</span></a>
+                <a href="/category/Sports" class="basicpage-text16"><span>Sports</span></a>
+                <a href="/category/Clubs" class="basicpage-text18"><span>Clubs</span></a>
+                <a href="/category/Research" class="basicpage-text20"><span>Research</span></a>
+                <a href="/category/Career Services" class="basicpage-text22"><span>Career Services</span></a>
+                <a href="/category/IITD News" class="basicpage-text24"><span>IITD News</span></a>
+                <a href="/category/Technology" class="basicpage-text26"><span>Technology</span></a>
+                <a href="/category/Alumni Relations" class="basicpage-text28"><span>Alumni Relations</span></a>
+                <a href="/category/Student Government" class="basicpage-text30"><span>Student Government</span></a>
+                <a href="/category/Entrepreneurship" class="basicpage-text32"><span>Entrepreneurship</span></a>
+                <a href="/category/General Championship" class="basicpage-text34"><span>General Championship</span></a>
+                <a href="/category/College Festivals" class="basicpage-text36"><span>College Festivals</span></a>
+              </div>
+            </div>
+            <div class="post-page-full-post-comments">
+              <div class="post-page-ncpdt">
+                <div class="post-page-ncp">
+                  <img
+                    alt="Ellipse43568"
+                    src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/57dea535-4206-42b3-ab5d-927d689c7d46?org_if_sml=11499"
+                    class="post-page-ellipse4"
+                  />
+                  <div class="post-page-name-community">
+                    <a href="/uprofile/{{name}}" class="post-page-text38">
+                      <span>{{name}}</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="post-page-date-time">
+                  <span class="post-page-text40"><span>{{time}}</span></span>
+                  <span class="post-page-text42"><span>{{date}}</span></span>
+                </div>
+              </div>
+              <div class="post-page-post-box">
+                <span class="post-page-text44"><span>{{title}}</span></span>
+                <div class="post-page-post-frame">
+                  <div class="post-page-frame28">
+                    {% if img != None %}
+                      <img class="card-img-top" alt="..." " 
+                        src={{img}}
+                        style="max-width: 100%;">
+                      {% else %}
+                      <div class post-page-post-image ></div>
+                      {% endif %}
+                  </div>
+                  <span class="post-page-text46" style="white-space: pre-line;">
+                    {{content}}
+                  </span>
+                  <br>
+                  <form action="/post/{{post_id}}" method="post" class="Translate text"  style="color:rgba(170, 205, 233, 1); text-align: right">
+                    Translate to
+                    <select name="target_language" onchange="this.form.submit();">
+                        <option value="en" {% if selected_lang == "en" %}selected{% endif %}>English</option>
+                        <option value="es" {% if selected_lang == "es" %}selected{% endif %}>Spanish</option>
+                        <option value="fr" {% if selected_lang == "fr" %}selected{% endif %}>French</option>
+                        <option value="de" {% if selected_lang == "de" %}selected{% endif %}>German</option>
+                        <option value="el" {% if selected_lang == "el" %}selected{% endif %}>Greek</option>
+                        <option value="hi" {% if selected_lang == "hi" %}selected{% endif %}>Hindi</option>
+                        <option value="ja" {% if selected_lang == "ja" %}selected{% endif %}>Japanese</option>
+                        <option value="it" {% if selected_lang == "it" %}selected{% endif %}>Italian</option>
+                        <option value="ko" {% if selected_lang == "ko" %}selected{% endif %}>Korean</option>
+                        <option value="pt" {% if selected_lang == "pt" %}selected{% endif %}>Portugese</option>
+                        <option value="ru" {% if selected_lang == "ru" %}selected{% endif %}>Russian</option>
+                        <option value="tr" {% if selected_lang == "tr" %}selected{% endif %}>Turkish</option>
+                    </select>
+                </form>
+                </div>
+                <div class="post-page-options1">
+                  <div class="post-page-frame29">
+                    <a href="/Vote/{{post_id}}/1">
+                    <img
+                      alt="image203569"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/ae742c5c-e833-4502-a30d-e8eae54887eb?org_if_sml=11357"
+                      class="post-page-image20"
+                    />
+                    
+                  </a>
+                  </div>
+                  <span style="color: rgba(170, 205, 233, 1)">{{vote}}</span>
+                  <div class="post-page-frame30">
+                    <a href="/Vote/{{post_id}}/0">
+                    <img
+                      alt="image323569"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/eb60a91e-b26d-4677-95f8-babaa7da7687?org_if_sml=11669"
+                      class="post-page-image32"
+                    /></a>
+                  </div>
+                  <div class="post-page-frame31">
+                    <img
+                      alt="image213569"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/85f23267-e33a-4dbf-8fd3-333f51d8f0a6?org_if_sml=1885"
+                      class="post-page-image21"
+                    />
+                  </div>
+                  <img
+                    alt="image333570"
+                    src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/59451736-525f-4d01-ac79-8f40aa5673e5?org_if_sml=1932"
+                    class="post-page-image33"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>SearchPage-Community</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button; -moz-appearance: button; -ms-appearance: button; appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <link href="{{url_for('static',filename = 'searchpagecommunity.css')}}" rel="stylesheet" />
+
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="/search_by_post"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
+              </a>
+              <a href="/profilesettings" method="get">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                  alt="image28I546"
+                  class="index-image28"
+                />
+              </a>
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <div class="searchpagecommunity-title-bar">
+            <img
+              src="public/playground_assets/logoi105-1xvp.svg"
+              alt="LogoI105"
+              class="searchpagecommunity-logo"
+            />
+            <input
+              type="text"
+              placeholder="Search..."
+              class="searchpagecommunity-user-input-search-bar"
+            />
+            <div class="searchpagecommunity-options">
+              <img
+                src="public/playground_assets/image39i105-itoj-200w.png"
+                alt="image39I105"
+                class="searchpagecommunity-image39"
+              />
+              <img
+                src="public/playground_assets/image28i105-qff-200h.png"
+                alt="image28I105"
+                class="searchpagecommunity-image28"
+              />
+              <img
+                src="public/playground_assets/image27i105-13a-200w.png"
+                alt="image27I105"
+                class="searchpagecommunity-image27"
+              />
+              <img
+                src="public/playground_assets/image31i105-8nxs-200h.png"
+                alt="image31I105"
+                class="searchpagecommunity-image31"
+              />
+            </div>
+          </div> -->
+          <div class="searchpagecommunity-frame">
+            <div class="searchpagecommunity-sidebar5">
+              <!-- <div class="searchpagecommunity-top-section">
+                <span class="searchpagecommunity-text">
+                  <span>Top Board</span>
+                </span>
+                <span class="searchpagecommunity-text02">
+                  <span>Following</span>
+                </span>
+                <span class="searchpagecommunity-text04">
+                  <span>Top Posts</span>
+                </span>
+                <span class="searchpagecommunity-text06">
+                  <span>Top Karma</span>
+                </span>
+                <span class="searchpagecommunity-text08">
+                  <span>Top Communitites</span>
+                </span>
+              </div> -->
+              <div class="searchpagecommunity-profilesidebar">
+                <span class="searchpagecommunity-text10">
+                  <span>By Type:</span>
+                </span>
+                <span class="searchpagecommunity-text12">
+                  <a href="/search_by_posts/{{s}}"><span>Posts</span></a>
+                </span>
+                <span class="searchpagecommunity-text14">
+                  <a href="/search_for_author/{{s}}"><span>Author</span></a>
+                </span>
+                <span class="searchpagecommunity-text16">
+                  <a href="/search_for_community/{{s}}"><span>Community</span></a>
+                </span>
+                <!-- <span class="searchpagecommunity-text18">
+                  <span>By Time:</span>
+                </span>
+                <span class="searchpagecommunity-text20">
+                  <span>Last Hour</span>
+                </span>
+                <span class="searchpagecommunity-text22">
+                  <span>Last Day</span>
+                </span>
+                <span class="searchpagecommunity-text24">
+                  <span>Last Month</span>
+                </span> -->
+              </div>
+            </div>
+            <div class="searchpagecommunity-communities">
+              <div class="searchpagecommunity-community-list">
+                {% if results==() %}
+                <div class="index-frame38">
+                  <div class="index-frame36">
+                    <span class="index-text38"><span>NO SUCH RESULTS!!!</span></span>
+                  </div>
+                </div>
+                {% else %}
+                {% for result in results %}
+                <div class="searchpagecommunity-communtitybar">
+                  <div class="searchpagecommunity-frame24">
+                    <img
+                      src="{{ url_for('static', filename= 'public/playground_assets/ellipse3i117-zd2-200h.png') }}"
+                      alt="Ellipse3I105"
+                      class="searchpagecommunity-ellipse3"
+                    />
+                    <div class="searchpagecommunity-community-about">
+                      <span class="searchpagecommunity-text26">
+                        <span>{{result[0][1]}}</span><a href="/community/{{result[1]}}"></a>
+                      </span>
+                      <span class="searchpagecommunity-text28">
+                        <span>{{result[0][2]}}</span>
+                      </span>
+                    </div>
+                  </div>
+                  <button class="basicpage-follow-button01">
+                    <span class="basicpage-text49">
+                  <a href="/Follow/{{result[0][1]}}">
+                    {% if result[1] %}
+                      <span>Following</span>
+                    {% else %}
+                      <span>Follow</span>
+                    {% endif %}
+                    </a></span>
+                  </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
