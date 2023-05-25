@@ -7,3 +7,5 @@ Maskit is a webapp that allows users to post their thoughts anonymously to vario
 - Users can view their profile and edit their details.
 
 Figma project: https://www.figma.com/file/aVVxXqulVSna8YzqpD6xo1/Maskit?node-id=0%3A1&t=9FPnoMIzMBdrOVnm-1
+
+Website link on baadal VM: http://10.17.50.176:5000
